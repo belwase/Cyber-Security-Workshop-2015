@@ -1,0 +1,56 @@
+//scan a single host
+nmap <ip>
+
+//nmap hostname
+nmap www.ioe.edu.np
+
+//nmap with verbose
+nmap -v <ip>
+
+//scanning a subnet
+nmap 192.168.5.1/24 OR nmap 192.168.5.1,2,3  OR nmap 192.168.5.1-20
+
+//Excluding some host
+nmap 192.168.1.0/24 --exclude 192.168.1.5
+
+//Turn on OS version detection
+nmap -A 192.168.1.254
+nmap -v -A 192.168.1.1
+nmap -O  --osscan-guess 192.168.1.1
+
+//Find out if a host/network is protected by firewall (Firewalking)
+nmap -sA 192.168.1.254
+
+//Scan host with firewall
+nmap -PN 192.168.1.1
+
+//Host discovery
+nmap -sP 192.168.1.0/24
+
+//show routes
+nmap --iflist
+
+## Scan port 80
+nmap -p 80 192.168.1.1
+
+## Scan two ports ##
+nmap -p 80,443 192.168.1.1
+
+## Scan port ranges ##
+nmap -p 80-200 192.168.1.1
+
+## Scan TCP port 80
+nmap -p T:80 192.168.1.1
+ 
+## Scan UDP port 53
+nmap -p U:53 192.168.1.1
+
+## Combine all options ##
+nmap -p U:53,111,137,T:21-25,80,139,8080 192.168.1.1
+nmap -p U:53,111,137,T:21-25,80,139,8080 192.168.1.1
+nmap -v -sU -sT -p U:53,111,137,T:21-25,80,139,8080 192.168.1.254
+
+//scan top ports
+nmap --top-ports 5 192.168.1.1
+
+
